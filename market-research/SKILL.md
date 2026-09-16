@@ -11,6 +11,10 @@ metadata:
     related_skills: [last30days, grounded-citations]
 ---
 
+> **Требование к окружению (16.09.2026):** движок `last30days` требует **Python 3.12+**. Там, где `python3` = 3.11 (например, сервер Hermes с python3.14), вызовы ниже надо делать через `python3.14` — иначе движок падает с «last30days v3 requires Python 3.12+».
+> **YouTube** работает при установленном `yt-dlp`; TikTok/Instagram требуют `SCRAPECREATORS_API_KEY`, X — отдельной авторизации.
+> **LAW 7 движка:** на темах-именах собственных (продукты, компании, люди) обязателен `--plan` — агент генерирует JSON-план сам.
+
 # Installation
 
 ## Method 1: Via AI Agent (Recommended)
@@ -277,7 +281,7 @@ Respond as a JSON array with one object per post:
 **Инструменты:**
 ```bash
 # last30days — глубокий обзор
-python3 ~/.hermes/skills/research/last30days/scripts/last30days.py "[ниша] problems complaints frustrated" --search=reddit,x,youtube --days=30
+python3.14 ~/.hermes/skills/research/last30days/scripts/last30days.py "[ниша] problems complaints frustrated" --search=reddit,x,youtube --days=30
 
 # Tavily — глубокий поиск
 tavily_search(query="[ниша] problems complaints frustrated", search_depth="advanced")
@@ -302,7 +306,7 @@ web_search("[ниша] problems complaints frustrated site:reddit.com")
 **Инструменты:**
 ```bash
 # last30days
-python3 ~/.hermes/skills/research/last30days/scripts/last30days.py "[ниша] how to start beginner guide safe" --search=reddit,youtube --days=30
+python3.14 ~/.hermes/skills/research/last30days/scripts/last30days.py "[ниша] how to start beginner guide safe" --search=reddit,youtube --days=30
 
 # Tavily
 tavily_search(query="[ниша] как начать безопасно для новичков", search_depth="advanced")
@@ -322,7 +326,7 @@ web_search("[ниша] как начать безопасно для нович�
 **Инструменты:**
 ```bash
 # last30days
-python3 ~/.hermes/skills/research/last30days/scripts/last30days.py "[ниша] market size revenue funding" --search=reddit,x,hackernews --days=30
+python3.14 ~/.hermes/skills/research/last30days/scripts/last30days.py "[ниша] market size revenue funding" --search=reddit,x,hackernews --days=30
 
 # Tavily
 tavily_search(query="[ниша] market size 2025 2026 revenue TAM", search_depth="advanced")
@@ -345,7 +349,7 @@ web_search("[ниша] market size 2025 2026 revenue")
 **Инструменты:**
 ```bash
 # last30days
-python3 ~/.hermes/skills/research/last30days/scripts/last30days.py "[конкурент1] vs [конкурент2] comparison review problems" --search=reddit,x,youtube --days=30
+python3.14 ~/.hermes/skills/research/last30days/scripts/last30days.py "[конкурент1] vs [конкурент2] comparison review problems" --search=reddit,x,youtube --days=30
 
 # Tavily
 tavily_search(query="[конкурент] review problems complaints", search_depth="advanced")
